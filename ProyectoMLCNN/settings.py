@@ -25,7 +25,7 @@ SECRET_KEY = 'tgs!--ab0u-*cebo$p2js0*%hvz@_oxu2hl3#v!_ifgp8y%41v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0','127.0.0.1','ImagenClassificationCNN.uc.r.appspot.com','ImagenClassificationCNN.appspot.com'] #Anadir URLs
+ALLOWED_HOSTS = ['0.0.0.0','127.0.0.1','imagencnn.uc.r.appspot.com','imagencnn.appspot.com'] #Anadir URLs
 
 
 # Application definition
@@ -70,7 +70,7 @@ ROOT_URLCONF = 'ProyectoMLCNN.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['apiSNN/templates'],#ESTO SE MODIFICÓ
+        'DIRS': ['apiCNN/templates'],#ESTO SE MODIFICÓ
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
