@@ -1,66 +1,13 @@
 #CONTROLADOR
 
 from rest_framework import generics #para microservicio
-from apiSNN import models
-from apiSNN import serializers
 import os
 from django.core.files.storage import FileSystemStorage
 from werkzeug.datastructures import FileStorage
 from django.shortcuts import render
-import pyrebase #para consumo servicio base de datos de firebase
-from apiSNN.Logica import modeloSNN #para utilizar modelo.json SNN
 from apiSNN.Logica import controlador
 
-# Create your views here.
-class ListLibro(generics.ListCreateAPIView):
-    """
-    retrieve:
-        Retorna una instancia libro.
 
-    list:
-        Retorna todos los libros, ordenados por los más recientes.
-
-    create:
-        Crea un nuevo libro.
-
-    delete:
-        Elimina un libro existente.
-
-    partial_update:
-        Actualiza uno o más campos de un libro existente.
-
-    update:
-        Actualiza un libro.
-    """
-    queryset = models.Libro.objects.all()
-    serializer_class = serializers.LibroSerializer
-
-class DetailLibro(generics.RetrieveUpdateDestroyAPIView):
-    queryset = models.Libro.objects.all()
-    serializer_class = serializers.LibroSerializer
-
-class ListPersona(generics.ListCreateAPIView):
-    queryset = models.Persona.objects.all()
-    serializer_class = serializers.PersonaSerializer
-
-class DetailPersona(generics.RetrieveUpdateDestroyAPIView):
-    queryset = models.Persona.objects.all()
-    serializer_class = serializers.PersonaSerializer
-
-config = {
-
-    'apiKey': "AIzaSyDBYpL2tb3yh3SIPo2BFhlS7slKruVGOic",
-    'authDomain': "proyectotiendajpri.firebaseapp.com",
-    'databaseURL': "https://proyectotiendajpri.firebaseio.com",
-    'projectId': "proyectotiendajpri",
-    'storageBucket': "proyectotiendajpri.appspot.com",
-    'messagingSenderId': "1046831721926",
-    'appId': "1:1046831721926:web:7402a636a8cd165f4b16c7",
-    'measurementId': "G-MKSCN84RDE"
-}
-
-firebase = pyrebase.initialize_app(config)
-auth = firebase.auth()
 
 class Autenticacion():
 
