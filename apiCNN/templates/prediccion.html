@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>Prediccion De la imagen</title>
+</head>
+<body>
+<form id="FIngreso" method="post" >
+    <h1>RESULTADO DE LA PREDICCION.</h1>
+    <label>{{ Imagen }}</label><br>
+    <label>Con un : &nbsp;</label>
+     <label>{{ porcentaje }}</label>
+     <label>% De similitud.</label>
+    <br>
+    <br>
+    <form method="post" action="index.html">
+        {% csrf_token %}
+        <script>
+            function redireccion() {
+                document.location.href="index.html"
+            }
+        </script>
+        <input onclick="redireccion()" value="REGRESAR.">
+    </form>
+</form>
+</body>
+</html>
