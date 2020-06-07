@@ -7,23 +7,40 @@
     <title>Prediccion De la imagen</title>
 </head>
 <body>
-<form id="FIngreso" method="post" >
-    <h1>RESULTADO DE LA PREDICCION.</h1>
-    <label>{{ Imagen }}</label><br>
-    <label>Con un : &nbsp;</label>
-     <label>{{ porcentaje }}</label>
-     <label>% De similitud.</label>
-    <br>
-    <br>
-    <form method="post" action="index.html">
-        {% csrf_token %}
-        <script>
-            function redireccion() {
-                document.location.href="index.html"
-            }
-        </script>
-        <input onclick="redireccion()" value="REGRESAR.">
+
+    <style>
+        body{
+            background: #343d46;
+            background: #EFCA85;
+        }
+ 
+       input {
+           width: 170px;
+           height: 30px;
+           font-size: 20px;
+           font-family: Arial, Helvetica, sans-serif;
+           border-radius: 8px;
+           background-color: #343d46;
+       }
+        
+    </style>
+    <form id="FIngreso" method="post" >
+        <h1>RESULTADO DE LA PREDICCION.</h1>
+        <label>{{ Imagen }}</label><br>
+        <label>Con un : &nbsp;</label>
+        <label>{{ porcentaje }}</label>
+        <label>% De similitud.</label>
+        <br>
+        <form method="post" action="index.html">
+            {% csrf_token %}
+            
+            <input onclick="redireccion()" type="button" value="Regresar">
+        </form>
     </form>
-</form>
+    <script>
+        function redireccion() {
+            document.location.href="index.html"
+        }
+    </script>
 </body>
 </html>
